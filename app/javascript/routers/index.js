@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Signin from '../components/Signin.vue'
-import Signup from '../components/Signup.vue'
+import Signin from '../components/auth/Signin.vue'
+import Signup from '../components/auth/Signup.vue'
 import Artists from '../components/artists/Artists.vue'
 import Records from '../components/records/Records.vue'
 

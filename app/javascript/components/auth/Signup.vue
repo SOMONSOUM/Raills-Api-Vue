@@ -2,16 +2,14 @@
   <div class = "max-w-sm m-auto my-8">
     <div class = "border p-10 border-gey-light shadow-md rounded">
       <h3 class = "text-2xl mb-6 text-grey-darkest">Sign Up</h3>
-      <form @submit.prevent = "signup" class="">
-        <div class="text-red" v-if="error">
-          {{error}}
-        </div>
+      <form @submit.prevent = "signup" class="my-8">
         <div class="mb-6">
           <label for="email" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">E-mail Address</label>
           <input type="email" v-model="email" class="appearance-none block w-full bg-grey-lighter 
                                                      text-grey-darker border border-grey-lighter 
                                                      rounded py-3 px-4 leading-tight" id="email" 
                                                      placeholder="somon.soum9@gmail.com">
+        <p class="text-red text-xs italic" v-if="error">{{error}}.</p>
         </div>
 
         <div class="mb-6">
@@ -20,7 +18,8 @@
           <input type="password" v-model="password" class="appearance-none block w-full 
                                                            bg-grey-lighter text-grey-darker border 
                                                            border-grey-lighter rounded py-3 px-4 
-                                                           leading-tight" id="password">
+                                                           leading-tight" id="password"
+                                                           placeholder="******************">
         </div>
 
         <div class="mb-6">
@@ -29,7 +28,8 @@
           <input type="password" v-model="password_confirmation" class="appearance-none block w-full 
                                                            bg-grey-lighter text-grey-darker border 
                                                            border-grey-lighter rounded py-3 px-4 
-                                                           leading-tight" id="password_confirmation">
+                                                           leading-tight" id="password_confirmation"
+                                                           placeholder="******************">
         </div>
 
         <button type="submit" class="font-sans font-bold px-4 rounded cursor-poiter 
@@ -41,13 +41,16 @@
           <router-link to = "/" class="no-underline">Sign In</router-link>
         </div>
       </form>
+      <p class="text-center text-grey text-xs">
+        ©2019  RecordStore. All rights reserved.
+      </p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "signup",
+  name: 'Signup',
   data () {
     return {
       email: '',
@@ -56,43 +59,38 @@ export default {
       error: ''
     }
   },
-
   created () {
-    this.checksignedUp()
+    this.checkedSignedIn()
   },
   updated () {
-    this.checksignedUp()
+    this.checkedSignedIn()
   },
-
   methods: {
-    signup() {
-      this.$http.plain.post('/signup', { 
-          email: this.email, password: this.password, password_confirmation: this.password_confirmation
-       }).then(response => this.signupSuccesful(response))
-         .catch(error => this.signupFailed(error))
+    signup () {
+      this.$http.plain.post('/signup', { email: this.email, password: this.password, password_confirmation: this.password_confirmation })
+        .then(response => this.signupSuccessful(response))
+        .catch(error => this.signupFailed(error))
     },
-    signupSuccesful ( response ) {
+    signupSuccessful (response) {
       if (!response.data.csrf) {
         this.signupFailed(response)
         return
       }
-
       localStorage.csrf = response.data.csrf
-      localStorage.signedUp = true
+      localStorage.signedIn = true
+      this.error = ''
       this.$router.replace('/records')
     },
-
     signupFailed (error) {
       this.error = (error.response && error.response.data && error.response.data.error) || 'Something went wrong'
       delete localStorage.csrf
-      delete localStorage.checksignedUp
+      delete localStorage.signedIn
     },
-    checksignedUp () {
-      if (localStorage.signedUp) {
+    checkedSignedIn () {
+      if (localStorage.signedIn) {
         this.$router.replace('/records')
       }
     }
   }
 }
 </script>
-

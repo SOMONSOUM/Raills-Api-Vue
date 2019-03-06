@@ -7,11 +7,11 @@
         <a href="/" class="uppercase text-sm font-mono pl-4 font-semibold no-underline text-indigo-dark hover:text-indigo-darker">Record Store</a>
       </div>
       <div>
-        <router-link to="/" class="link-grey px-2 no-underline" v-if="!signedIn()">Sign in</router-link>
-        <router-link to="/signup" class="link-grey px-2 no-underline" v-if="!signedIn()">Sign Up</router-link>
-        <router-link to="/records" class="link-grey px-2 no-underline" v-if="signedIn()">Records</router-link>
-        <router-link to="/artists" class="link-grey px-2 no-underline" v-if="signedIn()">Artists</router-link>
-        <a href="#" @click.prevent="signOut" class="link-grey px-2 no-underline" v-if="signedIn()">Sign out</a>
+        <router-link to="/" class="px-2 text-indigo-dark hover:text-indigo-darker no-underline" v-if="!signedIn()">Sign in</router-link>
+        <router-link to="/signup" class="px-2 text-indigo-dark hover:text-indigo-darker no-underline" v-if="!signedIn()">Sign Up</router-link>
+        <router-link to="/records" class="px-2 text-indigo-dark hover:text-indigo-darker no-underline" v-if="signedIn()">Records</router-link>
+        <router-link to="/artists" class="px-2 text-indigo-dark hover:text-indigo-darker no-underline" v-if="signedIn()">Artists</router-link>
+        <a href="#" @click.prevent="signOut" class="px-2 text-indigo-dark hover:text-indigo-darker no-underline" v-if="signedIn()">Sign out</a>
       </div>
     </div>
   </header>

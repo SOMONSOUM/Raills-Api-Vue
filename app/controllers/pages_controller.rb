@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
-    # @artists = Artist.all
+    # @users = User.all
     
-    # render json: @artists
+    # render json: @users
   end
 end

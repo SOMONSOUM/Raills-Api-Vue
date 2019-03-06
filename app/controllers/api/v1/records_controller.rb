@@ -40,12 +40,11 @@ module Api
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
+    
       def set_record
         @record = current_user.records.find(params[:id])
       end
 
-      # Never trust parameters from the scary internet, only allow the white list through.
       def record_params
         params.require(:record).permit(:title, :year, :artist_id)
       end

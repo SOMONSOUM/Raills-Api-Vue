@@ -4,6 +4,7 @@ class SignupController < ApplicationController
 
     if user.save
       payload = { user_id: user.id }
+      puts payload
       session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
       tokens = session.login
 

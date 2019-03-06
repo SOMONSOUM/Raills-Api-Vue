@@ -3,7 +3,6 @@ import App from '../App.vue'
 import router from '../routers'
 import VueAxios from 'vue-axios'
 import { plainAxiosInstance, securedAxiosInstance } from '../api/axios'
-import './main.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.body.appendChild(document.createElement('app'))
