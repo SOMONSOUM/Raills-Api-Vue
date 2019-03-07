@@ -1,5 +1,6 @@
 module Api
   class V1::RecordsController < ApplicationController
+    skip_before_action :verify_authenticity_token
     before_action :authorize_access_request!
     before_action :set_record, only: [:show, :edit, :update, :destroy]
 

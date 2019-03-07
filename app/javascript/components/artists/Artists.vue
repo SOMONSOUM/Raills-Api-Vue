@@ -14,7 +14,7 @@
                                 v-model="newArtist.name">
 
       <input type="submit" value="Add Artist" 
-                           class="font-sans font-bold px-4 rounded cursor-pointer 
+                           class="font-sans font-bold px-4 mt-2 rounded cursor-pointer 
                            no-underline bg-green hover:bg-green-dark block w-full 
                            py-4 text-white items-center justify-center">
     </form>

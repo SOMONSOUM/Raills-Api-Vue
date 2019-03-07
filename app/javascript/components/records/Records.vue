@@ -6,7 +6,7 @@
 
     <form @submit.prevent="addRecord">
       <div class="mb-6">
-        <label for="record_title" class="label">Title</label>
+        <label for="record_title" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Title</label>
         <input
           type="text"
           id="record_title"
@@ -20,7 +20,7 @@
       </div>
 
       <div class="mb-6">
-        <label for="record_year" class="label">Year</label>
+        <label for="record_year" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Year</label>
         <input
           type="text"
           id="record_year"
@@ -34,7 +34,7 @@
       </div>
 
       <div class="mb-6">
-        <label for="artist" class="label">Artist</label>
+        <label for="artist" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Artist</label>
         <select id="artist" class="appearance-none py-3 px-4 pr-8 block w-full 
                                    bg-grey-lighter border border-grey-lighter 
                                    text-grey-darker rounded leading-tight focus:outline-none focus:bg-white focus:border-grey" 
@@ -73,14 +73,14 @@
             <div class="mb-6 p-4 bg-white rounded border border-grey-light mt-4">
 
               <div class="mb-6">
-                <label class="label">Title</label>
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Title</label>
                 <input class="appearance-none block w-full bg-grey-lighter 
                               text-grey-darker border border-grey-lighter 
                               rounded py-3 px-4 leading-tight" v-model="record.title">
               </div>
 
               <div class="mb-6">
-                <label class="label">Year</label>
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Year</label>
                 <input class="appearance-none block w-full bg-grey-lighter 
                               text-grey-darker border border-grey-lighter 
                               rounded py-3 px-4 leading-tight" v-model="record.year">
