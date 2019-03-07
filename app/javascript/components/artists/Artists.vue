@@ -6,6 +6,7 @@
     <h3 class="font-mono font-regular text-3xl mb-4">Add a new artist</h3>
 
     <form @submit.prevent = "addArtist">
+      <label for="record_title" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Name</label>
       <input type="text" class="appearance-none block w-full bg-grey-lighter 
                                 text-grey-darker border border-grey-lighter 
                                 rounded py-3 px-4 leading-tight" 

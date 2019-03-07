@@ -4,6 +4,7 @@ import Signin from '../components/auth/Signin.vue'
 import Signup from '../components/auth/Signup.vue'
 import Artists from '../components/artists/Artists.vue'
 import Records from '../components/records/Records.vue'
+import Profile from '../components/profile/Profile.vue'
 
 Vue.use(Router)
 
@@ -19,6 +20,11 @@ export default new Router({
       path: '/records',
       name: 'Records',
       component: Records
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
     },
     {
       path: '/',

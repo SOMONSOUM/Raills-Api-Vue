@@ -1,12 +1,12 @@
 <template>
   <div class = "max-w-sm m-auto my-8 signin-form">
     <div class = "border p-10 border-gey-light shadow-md rounded">
-      <h3 class = "text-2xl mb-6 text-grey-darkest">Sign In</h3>
+      <h3 class = "text-2xl mb-6 text-center text-grey-darkest">Sign In</h3>
       <form @submit.prevent = "signin" class="my-8">
         <p class="text-red text-xs italic" v-if="error">{{error}}.</p>
         <div class="mb-6">
           <label for="email" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">E-mail Address</label>
-          <input type="email" v-model="email" class="appearance-none block w-full bg-grey-lighter 
+          <input type="email" v-model="email" class="shadow appearance-none block w-full bg-grey-lighter 
                                                      text-grey-darker border border-grey-lighter 
                                                      rounded py-3 px-4 leading-tight" id="email" 
                                                      placeholder="somon.soum9@gmail.com">
@@ -15,11 +15,21 @@
         <div class="mb-6">
           <label for="password" class="block uppercase tracking-wide text-grey-darker text-xs 
                                        font-bold mb-2">Password</label>
-          <input type="password" v-model="password" class="appearance-none block w-full 
+          <input type="password" v-model="password" class="shadow appearance-none block w-full 
                                                            bg-grey-lighter text-grey-darker border 
                                                            border-grey-lighter rounded py-3 px-4 
                                                            leading-tight" id="password"
                                                            placeholder="******************">
+        </div>
+
+        <div class="mb-6">
+          <div class="md:w-1/3"></div>
+          <label class="md:w-2/3 block text-grey font-bold">
+            <input class="mr-2 leading-tight" type="checkbox">
+            <span class="text-sm">
+              Remember Me
+            </span>
+          </label>
         </div>
 
         <button type="submit" class="font-sans font-bold px-4 rounded cursor-poiter 

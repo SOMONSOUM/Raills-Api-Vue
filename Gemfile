@@ -10,7 +10,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
-gem 'coffee-rails', '~> 4.2'
+gem "pundit"
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
@@ -30,6 +30,8 @@ group :development do
   gem 'pry-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'annotate'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 

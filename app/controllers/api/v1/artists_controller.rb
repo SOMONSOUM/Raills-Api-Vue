@@ -2,8 +2,9 @@ module Api
   module V1
     class ArtistsController < ApplicationController
       skip_before_action :verify_authenticity_token
-      before_action :authorize_access_request!, except: [:index, :show]
-      before_action :set_artist, only: [:show, :edit, :update, :destroy]
+      before_action :authorize_access_request!, except: %i[index show]
+      before_action :set_artist, only: %i[show edit update destroy]
+      # before_action :set_artist, only: [:show, :edit, :update, :destroy]
   
       # GET /artists
       def index
